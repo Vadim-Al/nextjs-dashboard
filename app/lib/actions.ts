@@ -3,7 +3,6 @@ import {z} from "zod"
 import {sql} from "@vercel/postgres"
 import {revalidatePath} from "next/cache"
 import {redirect} from "next/navigation"
-
 const FormSchema = z.object({
 	id: z.string(),
 	customerId: z.string({
@@ -18,6 +17,7 @@ const FormSchema = z.object({
 	date: z.string(),
 })
 
+
 export type State = {
 	errors?: {
 		customerId?: string[]
@@ -26,6 +26,7 @@ export type State = {
 	}
 	message?: string | null
 }
+
 
 const CreateInvoice = FormSchema.omit({id: true, date: true})
 const UpdateInvoice = FormSchema.omit({id: true, date: true})
@@ -62,6 +63,7 @@ export async function createInvoice(prevState: State, formData: FormData) {
 	redirect("/dashboard/invoices")
 }
 
+
 export async function updateInvoice(
 	id: string,
 	prevState: State,
@@ -96,6 +98,7 @@ export async function updateInvoice(
 	revalidatePath("/dashboard/invoices")
 	redirect("/dashboard/invoices")
 }
+
 
 export async function deleteInvoice(id: string) {
 	throw new Error("Failed to Delete Invoice")
