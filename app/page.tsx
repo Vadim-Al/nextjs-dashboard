@@ -6,15 +6,15 @@ import Image from "next/image"
 import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/nextjs"
 
 export default function Page() {
-	const router = useRouter() // Инициализируем useRouter
+	const router = useRouter()
 
 	const handleLoginClick = () => {
 		router.push("/sign-in")
 	}
+
 	const handleSignupClick = () => {
 		router.push("/sign-up")
 	}
-
 
 	return (
 		<main className="flex min-h-screen flex-col p-6">
@@ -53,7 +53,6 @@ export default function Page() {
 						>
 							Sign up
 						</button>
-
 					</SignedOut>
 				</div>
 				<div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
