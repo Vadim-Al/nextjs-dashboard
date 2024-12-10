@@ -15,6 +15,9 @@ importers:
       '@clerk/nextjs':
         specifier: ^6.6.0
         version: 6.6.0(next@15.0.0(react-dom@19.0.0-rc-cd22717c-20241013(react@19.0.0-rc-cd22717c-20241013))(react@19.0.0-rc-cd22717c-20241013))(react-dom@19.0.0-rc-cd22717c-20241013(react@19.0.0-rc-cd22717c-20241013))(react@19.0.0-rc-cd22717c-20241013)
+      '@clerk/types':
+        specifier: ^4.39.1
+        version: 4.39.1
       '@heroicons/react':
         specifier: ^2.1.4
         version: 2.1.4(react@19.0.0-rc-cd22717c-20241013)
@@ -136,6 +139,10 @@ packages:
 
   '@clerk/types@4.36.0':
     resolution: {integrity: sha512-WrwFNJeiToDCCSxzPRbjRnI541lLSyBwtncrGCV4zVr8NhQeEVWlPdbEYzLvQbFu6qYT1ifbE5UR/krHNI79TA==}
+    engines: {node: '>=18.17.0'}
+
+  '@clerk/types@4.39.1':
+    resolution: {integrity: sha512-9XpJ9Q7JQvLaEoLIQFkQ4CxAmyE5jHdkb9EnSxDVfZQZVRr9uej7ZaPinrcZT8jfpfCuepvFK8aiG4N9oGbhtw==}
     engines: {node: '>=18.17.0'}
 
   '@emnapi/runtime@1.2.0':
@@ -2186,6 +2193,10 @@ snapshots:
       react-dom: 19.0.0-rc-cd22717c-20241013(react@19.0.0-rc-cd22717c-20241013)
 
   '@clerk/types@4.36.0':
+    dependencies:
+      csstype: 3.1.1
+
+  '@clerk/types@4.39.1':
     dependencies:
       csstype: 3.1.1
 
