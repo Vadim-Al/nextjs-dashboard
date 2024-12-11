@@ -2,7 +2,7 @@
 import {useSignUp} from "@clerk/nextjs"
 import React from "react"
 import { toast } from 'react-hot-toast';
-
+const redirectUrl: string = process.env.NEXT_PUBLIC_SIGN_UP_EMAIL_LINK_REDIRECTED_URL ?? "http://localhost:3000/sign-up/verification" ;
 export default function SignUp() {
 	const [emailAddress, setEmailAddress] = React.useState("")
 	const [expired, setExpired] = React.useState(false)
@@ -27,9 +27,9 @@ export default function SignUp() {
 			await signUp.create({emailAddress})
 
             toast("An email with the sign-in link has been sent to your email address")
-
+			
 			const su = await startEmailLinkFlow({
-				redirectUrl: "http://localhost:3000/sign-up/verification",
+				redirectUrl: redirectUrl,
 			})
 			const verification = su.verifications.emailAddress
 
