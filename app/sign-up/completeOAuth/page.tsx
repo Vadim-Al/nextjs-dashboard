@@ -3,20 +3,24 @@
 import {useUser} from "@clerk/nextjs"
 import React from "react"
 
-export default function completeOAuth() {
+export default function CompleteOAuth() {
 	const {user} = useUser()
+
+	React.useEffect(() => {
+        async function getUser(){
+            if (user) {
+                const userData = {
+                    id: user.id,
+                }
+                console.log(userData)
+            }    
+        }  
+        getUser()
+	}, [user])
 
 	if (!user) {
 		return <div>Loading user information</div>
 	}
-	React.useEffect(() => {
-		if (user) {
-			const userData = {
-				id: user.id,
-			}
-            console.log(userData)
-		}
-	}, [user])
 
 	return (
 		<div className="flex justify-center items-center min-h-screen bg-gray-50">
