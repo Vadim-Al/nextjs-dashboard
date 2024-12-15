@@ -3,7 +3,6 @@
 // import clsx from 'clsx';
 import React, {useEffect, useState} from "react"
 import {useUser} from "@clerk/nextjs"
-import { string } from "zod"
 
 export default function OnboardingForm() {
 	const {user} = useUser()
@@ -74,7 +73,7 @@ export default function OnboardingForm() {
 				{step === 2 && (
 					<div>
 						<h2 className="text-xl font-bold mb-4">
-							What's your name?
+							What&apos;s your name?
 						</h2>
 						<div className="mb-4">
 							<label className="block mb-2">First Name</label>
@@ -222,7 +221,7 @@ export default function OnboardingForm() {
 					<div className="text-center">
 						<h2 className="text-xl font-bold mb-4">Thank you!</h2>
 						<p className="mb-6">
-							We're finalizing your registration process.
+							We&apos;re finalizing your registration process.
 						</p>
 						<div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
 					</div>
