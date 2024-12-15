@@ -1,4 +1,5 @@
 "use client"
+import OnboardingForm from "@/app/ui/onboarding/user-form"
 import {useClerk, useUser} from "@clerk/nextjs"
 import React from "react"
 
@@ -81,10 +82,6 @@ export default function Verification() {
 	}
 
 	return (
-		<div className="flex items-center justify-center min-h-screen bg-gray-100">
-			<div className="p-6 max-w-md bg-green-100 border border-green-300 text-green-700 rounded-lg shadow-md">
-				Successfully signed up. Return to the original tab to continue.
-			</div>
-		</div>
-	)
+		<OnboardingForm/>
+		)
 }
