@@ -1,24 +1,17 @@
 import "@/app/ui/global.css"
-import { inter } from '@/app/ui/fonts';
-import { Metadata } from 'next';
+import {inter} from "@/app/ui/fonts"
+import { ClerkProvider } from "@clerk/nextjs"
+import { Toaster } from "react-hot-toast";
 
-export const metadata: Metadata = {
-  title: {
-    template: '%s | Acme Dashboard',
-    default: 'Acme Dashboard',
-  },
-  description: 'The official Next.js Learn Dashboard built with App Router.',
-  metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
-    </html>
-  );
+export default function RootLayout({children}: {children: React.ReactNode}) {
+	return (
+		<ClerkProvider>
+			<html lang="en">
+				<body className={`${inter.className} antialiased`}>
+				<Toaster position="bottom-center" />
+					{children}
+				</body>
+			</html>
+		</ClerkProvider>
+	)
 }
